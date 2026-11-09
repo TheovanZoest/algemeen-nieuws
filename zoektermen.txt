@@ -1,0 +1,6 @@
+# Zoekwoorden voor Google Nieuws (één per regel).
+# Regels die met # beginnen worden overgeslagen.
+# Tip: uw woonplaats, buurgemeenten, of onderwerpen die u volgt.
+Weert
+Nederweert
+Cranendonck

@@ -1,0 +1,9 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="UTF-8"><title>Algemeen nieuws – gegevens</title></head>
+<body style="font-family:sans-serif;max-width:640px;margin:40px auto;line-height:1.5">
+<h1>Algemeen nieuws – gegevens</h1>
+<p>Deze pagina hoort bij Theo's Algemeen Nieuws Dashboard. Elke 20 minuten wordt <a href="nieuws.json">nieuws.json</a> automatisch bijgewerkt.</p>
+<p id="t">Laatst bijgewerkt: …</p>
+<p id="b"></p>
+<script>fetch('nieuws.json?'+Date.now()).then(r=>r.json()).then(d=>{document.getElementById('t').textContent='Laatst bijgewerkt: '+new Date(d.bijgewerkt).toLocaleString('nl-NL');
+const b=Object.entries(d.bronnen).map(([k,v])=>(v.items.length?'✓ ':'✗ ')+k+' ('+v.items.length+(v.via==='Google Nieuws'?', via Google':'')+')');document.getElementById('b').textContent=b.join(' · ');}).catch(()=>{document.getElementById('t').textContent='Nog niet bijgewerkt.';});</script>
+</body></html>
